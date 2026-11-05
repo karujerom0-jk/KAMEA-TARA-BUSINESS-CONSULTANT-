@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kamea Tara Business Consultant provides nationwide SME registration support, company and association registration assistance, business plans, project proposals and funding application support across Papua New Guinea.">
+  <meta name="theme-color" content="#092c27">
+  <title>Kamea Tara Business Consultant | PNG SME & Development Support</title>
+  <style>
+    :root {
+      --green: #0b3b32;
+      --green-2: #12634f;
+      --gold: #e8b64e;
+      --ink: #172a27;
+      --muted: #61716d;
+      --cream: #f6f7f2;
+      --white: #fff;
+      --line: #e4e9e3;
+      --shadow: 0 18px 50px rgba(8, 42, 35, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); line-height: 1.65; background: var(--white); }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+    .topbar { background: #062720; color: #d9e8e2; font-size: 13px; padding: 9px 0; }
+    .topbar .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 235px; }
+    .brand-mark { width: 43px; height: 43px; border-radius: 13px; display: grid; place-items: center; background: var(--green); color: var(--gold); font-weight: 900; font-size: 20px; }
+    .brand strong { display: block; color: var(--green); font-size: 15px; letter-spacing: .3px; line-height: 1.2; }
+    .brand small { color: var(--muted); font-size: 11px; letter-spacing: 1.1px; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 25px; font-size: 14px; font-weight: 650; color: #334b45; }
+    nav a:hover { color: var(--green-2); }
+    .nav-cta, .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 7px; padding: 13px 19px; background: var(--gold); color: #172a27; font-weight: 800; border: 0; transition: .2s ease; }
+    .nav-cta:hover, .btn:hover { transform: translateY(-2px); filter: brightness(.97); }
+    .menu-btn { display: none; background: none; border: 1px solid var(--line); padding: 8px 11px; border-radius: 7px; font-size: 21px; }
+    .hero { position: relative; overflow: hidden; color: white; background: linear-gradient(115deg, rgba(5,37,30,.97), rgba(9,66,53,.91)), radial-gradient(circle at 80% 20%, #39856a, transparent 38%); }
+    .hero:after { content: ""; position: absolute; width: 480px; height: 480px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; right: -100px; top: -170px; box-shadow: 0 0 0 55px rgba(255,255,255,.025), 0 0 0 110px rgba(255,255,255,.02); }
+    .hero-content { position: relative; z-index: 1; padding: 100px 0 105px; max-width: 760px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--gold); font-size: 12px; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 28px; height: 2px; background: var(--gold); }
+    h1 { font-size: clamp(39px, 6vw, 67px); line-height: 1.08; letter-spacing: -2px; margin: 20px 0; }
+    .hero p { color: #d8e7e1; font-size: 18px; max-width: 650px; margin: 0 0 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .btn-outline { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border: 1px solid rgba(255,255,255,.55); color: white; border-radius: 7px; font-weight: 700; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+    .trust-strip { background: var(--cream); border-bottom: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; padding: 24px 0; }
+    .trust-item { display: flex; gap: 12px; align-items: center; justify-content: center; color: var(--green); font-weight: 750; font-size: 14px; }
+    .trust-icon { width: 35px; height: 35px; border-radius: 50%; background: #e6efe9; display: grid; place-items: center; color: var(--green-2); }
+    section { padding: 84px 0; }
+    .section-head { max-width: 700px; margin: 0 auto 42px; text-align: center; }
+    .section-head .eyebrow { color: var(--green-2); }
+    .section-head h2 { color: var(--green); font-size: clamp(29px, 4vw, 42px); line-height: 1.18; margin: 13px 0; letter-spacing: -1px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .service-card { border: 1px solid var(--line); border-radius: 13px; padding: 28px; background: white; box-shadow: 0 7px 25px rgba(10,50,40,.04); transition: .2s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #c8d9cf; }
+    .card-icon { width: 48px; height: 48px; display: grid; place-items: center; background: #eaf2ec; color: var(--green-2); border-radius: 12px; font-size: 23px; margin-bottom: 19px; }
+    .service-card h3 { color: var(--green); font-size: 20px; margin: 0 0 8px; line-height: 1.3; }
+    .service-card p { color: var(--muted); font-size: 14px; margin: 0 0 17px; }
+    .check-list { padding: 0; margin: 0; list-style: none; }
+    .check-list li { position: relative; padding: 7px 0 7px 23px; font-size: 14px; color: #3f514c; border-top: 1px solid #f0f2ef; }
+    .check-list li:before { content: "✓"; position: absolute; left: 0; color: var(--green-2); font-weight: 900; }
+    .highlight { background: var(--cream); }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: center; }
+    .split h2 { color: var(--green); font-size: clamp(30px,4vw,43px); line-height: 1.15; letter-spacing: -1px; margin: 13px 0 18px; }
+    .split p { color: var(--muted); }
+    .benefit-list { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 25px; }
+    .benefit { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--green); font-size: 14px; }
+    .benefit span { color: var(--green-2); font-size: 18px; }
+    .duration-card { background: var(--green); color: white; border-radius: 16px; padding: 34px; box-shadow: var(--shadow); }
+    .duration-card .number { color: var(--gold); font-size: 52px; line-height: 1; font-weight: 900; }
+    .duration-card h3 { font-size: 23px; margin: 13px 0 8px; }
+    .duration-card p { color: #d6e5df; font-size: 14px; }
+    .duration-card .note { padding-top: 17px; border-top: 1px solid rgba(255,255,255,.18); font-size: 12px; color: #c3d7cf; }
+    .project-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .project { background: white; border: 1px solid var(--line); padding: 19px 17px; border-radius: 10px; font-weight: 750; color: var(--green); display: flex; gap: 11px; align-items: center; min-height: 75px; }
+    .project span { font-size: 22px; }
+    .process { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; counter-reset: step; }
+    .step { position: relative; padding: 24px; background: var(--cream); border-radius: 11px; }
+    .step:before { counter-increment: step; content: "0" counter(step); color: var(--gold); font-size: 28px; font-weight: 900; }
+    .step h3 { color: var(--green); margin: 9px 0 6px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); font-size: 13px; }
+    .cta-band { background: var(--green); color: white; padding: 60px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .cta-inner h2 { font-size: clamp(27px,4vw,38px); line-height: 1.2; margin: 0 0 8px; }
+    .cta-inner p { color: #d2e2db; margin: 0; }
+    .contact-section { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 35px; }
+    .contact-info { background: var(--green); color: white; padding: 34px; border-radius: 14px; }
+    .contact-info h3 { font-size: 24px; margin: 0 0 10px; }
+    .contact-info p { color: #d1e2da; font-size: 14px; }
+    .contact-line { padding: 16px 0; border-top: 1px solid rgba(255,255,255,.16); }
+    .contact-line small { display: block; color: #b8d1c6; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+    .contact-line a { font-weight: 750; overflow-wrap: anywhere; }
+    .contact-form { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 34px; }
+    .contact-form h3 { margin: 0 0 18px; color: var(--green); font-size: 23px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    label { display: block; font-size: 12px; font-weight: 750; color: #41534e; margin-bottom: 6px; }
+    input, select, textarea { width: 100%; border: 1px solid #dce4de; border-radius: 7px; padding: 12px 13px; font: inherit; font-size: 14px; background: #fff; color: var(--ink); outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--green-2); box-shadow: 0 0 0 3px rgba(18,99,79,.1); }
+    textarea { min-height: 120px; resize: vertical; }
+    .field { margin-bottom: 15px; }
+    .full { grid-column: 1/-1; }
+    .form-note { font-size: 11px; color: var(--muted); margin: 12px 0 0; }
+    footer { background: #062720; color: #d2e0da; padding: 27px 0; font-size: 12px; }
+    footer .container { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .floating-contact { position: fixed; z-index: 50; right: 20px; bottom: 20px; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .float-btn { display: flex; align-items: center; gap: 9px; padding: 12px 16px; border-radius: 50px; background: var(--gold); color: #172a27; box-shadow: 0 8px 25px rgba(0,0,0,.2); font-size: 13px; font-weight: 850; }
+    .float-btn.call { background: var(--green-2); color: white; }
+    .float-btn.email { background: white; color: var(--green); }
+    .float-btn:hover { transform: translateY(-2px); }
+    @media (max-width: 900px) {
+      nav { gap: 13px; font-size: 12px; }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .project-grid { grid-template-columns: repeat(2,1fr); }
+      .process { grid-template-columns: repeat(2,1fr); }
+      .split { gap: 35px; }
+    }
+    @media (max-width: 680px) {
+      .topbar .container { justify-content: center; text-align: center; }
+      .nav { min-height: 68px; }
+      .menu-btn { display: block; }
+      nav { display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 18px 20px 22px; background: white; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 15px; }
+      nav.open { display: flex; }
+      nav a { font-size: 14px; }
+      .nav-cta { text-align: center; }
+      .hero-content { padding: 75px 0 80px; }
+      .hero p { font-size: 16px; }
+      section { padding: 65px 0; }
+      .trust-grid { grid-template-columns: 1fr; gap: 12px; }
+      .trust-item { justify-content: flex-start; }
+      .service-grid, .split, .contact-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 24px; }
+      .benefit-list { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .project { padding: 13px 11px; font-size: 12px; }
+      .process { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .step { padding: 17px; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .form-grid { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
+      .contact-info, .contact-form { padding: 25px; }
+      .floating-contact { right: 12px; bottom: 12px; }
+      .float-btn { padding: 11px 14px; }
+      footer .container { justify-content: center; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Supporting SMEs, businesses & community development across Papua New Guinea</span>
+      <span>Nationwide service · PNG</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Kamea Tara Business Consultant home">
+        <span class="brand-mark">KT</span>
+        <span><strong>KAMEA TARA</strong><small>Business Consultant</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav id="mainNav">
+        <a href="#services">Our Services</a>
+        <a href="#projects">Project Areas</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Get Started <span>→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">PNG SME Support Services</div>
+          <h1>Build your business.<br>Bring your project to life.</h1>
+          <p>Professional business registration support, business planning and project proposal development — helping entrepreneurs, SMEs and community organisations move forward with confidence.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Talk to Our Team <span>→</span></a>
+            <a class="btn-outline" href="#services">Explore Our Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><span class="trust-icon">✓</span> Business & SME Support</div>
+        <div class="trust-item"><span class="trust-icon">⌖</span> Nationwide PNG Assistance</div>
+        <div class="trust-item"><span class="trust-icon">↗</span> Business & Project Development</div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What We Do</div>
+          <h2>Practical services for business growth</h2>
+          <p>From getting your business registered to preparing a professional proposal, we provide support at important stages of your business and development journey.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="card-icon">▣</div>
+            <h3>SME Business Registration</h3>
+            <p>Support for individuals and small businesses establishing a recognised business presence.</p>
+            <ul class="check-list">
+              <li>IPA business name registration assistance</li>
+              <li>IRC Tax Identification Number (TIN) registration assistance</li>
+              <li>Business profile preparation</li>
+              <li>Bank account opening documentation support</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="card-icon">▤</div>
+            <h3>Company Registration</h3>
+            <p>Guidance and documentation support for entrepreneurs setting up a company.</p>
+            <ul class="check-list">
+              <li>IPA company registration assistance</li>
+              <li>IRC TIN registration assistance</li>
+              <li>Company profile preparation</li>
+              <li>Bank account opening documentation support</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="card-icon">♧</div>
+            <h3>Association Registration (INC)</h3>
+            <p>Support for associations and community groups working towards shared goals.</p>
+            <ul class="check-list">
+              <li>IPA association registration assistance</li>
+              <li>IRC registration assistance</li>
+              <li>Newspaper advertisement coordination</li>
+              <li>Profile and bank documentation support</li>
+              <li>Indicative processing duration: 4 weeks</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="card-icon">▧</div>
+            <h3>Business Plans & Profiles</h3>
+            <p>Clear, professional documents that explain your business, goals and growth strategy.</p>
+            <ul class="check-list">
+              <li>Business plan development</li>
+              <li>Company profile writing</li>
+              <li>Business concept development</li>
+              <li>Project planning documentation</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="card-icon">✎</div>
+            <h3>Project Proposals</h3>
+            <p>Structured proposals designed to communicate project needs, activities and expected outcomes.</p>
+            <ul class="check-list">
+              <li>Project proposal writing</li>
+              <li>Project budgets and activity plans</li>
+              <li>Community project documentation</li>
+              <li>Development concept preparation</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="card-icon">◎</div>
+            <h3>Funding & Loan Applications</h3>
+            <p>Preparation support to help applicants present their projects and business cases clearly.</p>
+            <ul class="check-list">
+              <li>SME loan submission support</li>
+              <li>Government funding applications</li>
+              <li>Donor funding applications</li>
+              <li>Supporting documents and submission preparation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Association Registration</div>
+          <h2>Helping community organisations get organised</h2>
+          <p>We assist associations with registration-related documentation and supporting steps, including newspaper advertisement coordination and profile preparation.</p>
+          <div class="benefit-list">
+            <div class="benefit"><span>✓</span> IPA registration support</div>
+            <div class="benefit"><span>✓</span> IRC registration support</div>
+            <div class="benefit"><span>✓</span> Newspaper advertisement coordination</div>
+            <div class="benefit"><span>✓</span> Bank profile documentation</div>
+          </div>
+        </div>
+        <aside class="duration-card">
+          <div class="number">4 weeks</div>
+          <h3>Indicative processing duration</h3>
+          <p>The stated processing duration for association registration is approximately four weeks.</p>
+          <div class="note">Actual timeframes may vary depending on authority processing, document completeness and other requirements. Processing times are not guaranteed.</div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Development Focus</div>
+          <h2>Project proposals across key sectors</h2>
+          <p>We help turn project ideas into structured proposals for business, community and development initiatives.</p>
+        </div>
+        <div class="project-grid">
+          <div class="project"><span>🐖</span> Agriculture & Livestock</div>
+          <div class="project"><span>🐟</span> Fish Farming</div>
+          <div class="project"><span>☕</span> Coffee Projects</div>
+          <div class="project"><span>🌱</span> Cocoa, Oil Palm & Vanilla</div>
+          <div class="project"><span>🌴</span> Tourism & Agribusiness</div>
+          <div class="project"><span>☀️</span> Solar & Rural Electrification</div>
+          <div class="project"><span>🛣️</span> Roads & Infrastructure</div>
+          <div class="project"><span>💧</span> Water Supply</div>
+          <div class="project"><span>🏫</span> Schools & Education</div>
+          <div class="project"><span>⛪</span> Churches & Aid Posts</div>
+          <div class="project"><span>🏪</span> Public Markets</div>
+          <div class="project"><span>🤝</span> Community Projects</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Simple & Clear</div>
+          <h2>How we work with you</h2>
+          <p>A straightforward process designed to understand your needs and help prepare the right documentation.</p>
+        </div>
+        <div class="process">
+          <div class="step"><h3>Make an enquiry</h3><p>Call, email or send a message explaining the service you need.</p></div>
+          <div class="step"><h3>Discuss requirements</h3><p>We discuss your goals, documents, scope of work and applicable fees.</p></div>
+          <div class="step"><h3>Prepare your documents</h3><p>We work with you to prepare the relevant profiles, plans or application documents.</p></div>
+          <div class="step"><h3>Next steps & submission</h3><p>We guide you through the agreed next steps and relevant submission process.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2>Have a business idea or project in mind?</h2>
+          <p>Let's discuss how we can support your next step.</p>
+        </div>
+        <a class="btn" href="#contact">Contact Kamea Tara <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Get In Touch</div>
+          <h2>Start a conversation with us</h2>
+          <p>Tell us what you are working on. Our service supports clients and SMEs across Papua New Guinea.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Kamea Tara Business Consultant</h3>
+            <p>PNG SME Support Services</p>
+            <div class="contact-line">
+              <small>Digicel</small>
+              <a href="tel:+67579838762">7983 8762</a>
+            </div>
+            <div class="contact-line">
+              <small>Vodafone</small>
+              <a href="tel:+67582699682">8269 9682</a>
+            </div>
+            <div class="contact-line">
+              <small>Email</small>
+              <a href="mailto:tarabusinessconsultant44@gmail.com">tarabusinessconsultant44@gmail.com</a>
+            </div>
+            <div class="contact-line">
+              <small>Service Coverage</small>
+              <strong>Nationwide — Papua New Guinea</strong>
+            </div>
+          </div>
+          <form class="contact-form" id="enquiryForm">
+            <h3>Send an enquiry</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" placeholder="Your contact number" required>
+              </div>
+              <div class="field full">
+                <label for="service">Service required</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option>SME Business Name Registration</option>
+                  <option>Company Registration</option>
+                  <option>Association Registration (INC)</option>
+                  <option>Business Plan or Company Profile</option>
+                  <option>Project Proposal</option>
+                  <option>SME Loan or Funding Application</option>
+                  <option>Other enquiry</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="message">Tell us about your needs</label>
+                <textarea id="message" name="message" placeholder="Briefly describe your business or project..." required></textarea>
+              </div>
+              <div class="field full">
+                <button class="btn" type="submit">Send Enquiry by Email <span>→</span></button>
+                <p class="form-note">This form opens your email application with your enquiry details. It does not submit data to a website server.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> Kamea Tara Business Consultant. All rights reserved.</span>
+      <span>PNG SME Support Services · Nationwide assistance</span>
+    </div>
+  </footer>
+
+  <div class="floating-contact" aria-label="Quick contact options">
+    <a class="float-btn" href="tel:+67579838762" aria-label="Call Digicel 7983 8762">☎ <span>Call Digicel</span></a>
+    <a class="float-btn call" href="tel:+67582699682" aria-label="Call Vodafone 8269 9682">☎ <span>Call Vodafone</span></a>
+    <a class="float-btn email" href="mailto:tarabusinessconsultant44@gmail.com" aria-label="Email Kamea Tara">✉ <span>Email Us</span></a>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.textContent = isOpen ? '×' : '☰';
+    });
+    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('enquiryForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const data = new FormData(this);
+      const subject = encodeURIComponent('Website Enquiry - ' + data.get('service'));
+      const body = encodeURIComponent(
+        'Name: ' + data.get('name') + '\n' +
+        'Phone: ' + data.get('phone') + '\n' +
+        'Service: ' + data.get('service') + '\n\n' +
+        'Message:\n' + data.get('message')
+      );
+      window.location.href = 'mailto:tarabusinessconsultant44@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
